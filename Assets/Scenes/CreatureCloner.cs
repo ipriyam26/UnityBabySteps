@@ -8,7 +8,7 @@ public class CreatureCloner : MonoBehaviour
     public GameObject creaturePool;
     void Start()
     {
-     CreateCreature(100);   
+     CreateCreature(10);   
     }
 
     private void CreateCreature(int v)

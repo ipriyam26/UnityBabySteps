@@ -25,7 +25,7 @@ Vector3 direction = new Vector3(5, 0, 0);
             // rotate every after 10 frames
             if (Time.frameCount % 100 == 0)
             {
-            transform.Rotate(0, 0, Random.Range(-90, 90));
+            transform.Rotate(0, 0, Random.Range(-180, 180));
             }
 
 
