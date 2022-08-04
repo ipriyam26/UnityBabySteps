@@ -8,13 +8,15 @@ public class CreatureCloner : MonoBehaviour
     public GameObject creaturePool;
     void Start()
     {
-     CreateCreature(50);   
+     CreateCreature(100);   
     }
 
     private void CreateCreature(int v)
     {
         for (int i = 0; i < v; i++)
         {
+                    // Random.InitState(((int)System.DateTime.Now.Ticks));
+
             GameObject newCreature = Instantiate(creature);
             newCreature.transform.position = new Vector3(Random.Range(-8,3),Random.Range(1,4),0);
             newCreature.transform.rotation = Quaternion.Euler(0, 0, Random.Range(-180, 180));
