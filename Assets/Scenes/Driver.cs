@@ -5,7 +5,6 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
 public Vector3 direction = new Vector3(5,4,0);
-// Color color = Color.red;
 public float accleration = 50f;
 public float friction = 0.3f;
 public Quaternion rotation;
@@ -36,7 +35,7 @@ public Driver(Vector3 direction, float accleration, Quaternion rotation){
     private void OnCollisionEnter2D(Collision2D other) {
         Vector2 strikingVelocity =  other.relativeVelocity;
         float strikingMass = gameObject.GetComponent<Rigidbody2D>().mass;
-        Vector2 strikingForce = strikingVelocity * 1.1f;
+        Vector2 strikingForce = strikingVelocity * 1.3f;
         Debug.Log("Striking force: " + strikingForce);
         gameObject.GetComponent<Rigidbody2D>().AddForce(strikingForce,ForceMode2D.Impulse);
 
