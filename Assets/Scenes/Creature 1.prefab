@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6814997717709485669}
   - component: {fileID: 6814997717709485666}
   - component: {fileID: 6814997717709485667}
+  - component: {fileID: -8342134862986635679}
+  - component: {fileID: -2689619398081267709}
   m_Layer: 0
   m_Name: Creature 1
   m_TagString: Untagged
@@ -100,8 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 6.1, y: 3.42, z: 0}
-  accleration: 40
-  friction: 0
   rotation: {x: 0, y: 0, z: 0.005759555, w: 0.99998343}
 --- !u!58 &6814997717709485666
 CircleCollider2D:
@@ -140,3 +140,32 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-8342134862986635679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814997717709485670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cd04a02c5124050b09f44384c2fcb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 10
+  timerIsRunning: 0
+  creature: {fileID: 6814997717709485670}
+--- !u!114 &-2689619398081267709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814997717709485670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e74ded7d91447fc9b3e0f66f5fa3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 15
+  timerIsRunning: 0
