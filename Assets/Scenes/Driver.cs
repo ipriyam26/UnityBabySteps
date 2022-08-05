@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-Vector3 direction = new Vector3(5, 0, 0);
+public Vector3 direction = new Vector3(5,4,0);
+// Color color = Color.red;
+public float accleration = 50f;
+public float friction = 0.3f;
+public Quaternion rotation;
 
+public Driver(Vector3 direction, float accleration, Quaternion rotation){
+    this.direction = direction;
+    this.accleration = accleration;
+    this.rotation = rotation;
+}
 
     // Start is called before the first frame update
     void Start()
     {
-        Random.InitState(System.DateTime.Now.Millisecond);
-        transform.rotation = Quaternion.Euler(0, 0, Random.Range(-180, 180));
-
+        // gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        Rigidbody2D rigid =  gameObject.GetComponent<Rigidbody2D>();
+        rigid.AddForce(direction * accleration);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //move to the right every third frame
-
-            transform.Translate(direction*Time.deltaTime);
-
-            // rotate every after 10 frames
-            if (Time.frameCount % 100 == 0)
-            {
-            transform.Rotate(0, 0, Random.Range(-139, 140));
-            }
 
 
         
@@ -34,11 +34,11 @@ Vector3 direction = new Vector3(5, 0, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        transform.rotation = Quaternion.Euler(0, 0, transform.rotation.z*-0.7f);
-
-
-
-// GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-5,5), Random.Range(-5,5)), ForceMode2D.Impulse);
+        Vector2 strikingVelocity =  other.relativeVelocity;
+        float strikingMass = gameObject.GetComponent<Rigidbody2D>().mass;
+        Vector2 strikingForce = strikingVelocity * 1.1f;
+        Debug.Log("Striking force: " + strikingForce);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(strikingForce,ForceMode2D.Impulse);
 
 
     }
