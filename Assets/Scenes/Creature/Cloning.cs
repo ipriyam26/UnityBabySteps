@@ -6,6 +6,7 @@ public class Cloning : MonoBehaviour
 {
     // Start is called before the first frame update
     float timeRemaining;
+    Color color;
     bool timerIsRunning = false;
     public GameObject creature;
     // public GameObject creature;
@@ -13,7 +14,8 @@ public class Cloning : MonoBehaviour
     {
         // Starts the timer automatically
         timerIsRunning = true;
-        
+        timeRemaining = Random.Range(0, 10);
+        color = gameObject.GetComponent<SpriteRenderer>().color;
     }
     void Update()
     {
@@ -28,10 +30,11 @@ public class Cloning : MonoBehaviour
             {
                 // Creates a new creature
             GameObject newCreature = Instantiate(creature);
-            newCreature.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            newCreature.GetComponent<SpriteRenderer>().color = color;
             newCreature.transform.position = gameObject.transform.position;
             newCreature.name  =  gameObject.name + "N";
-            Debug.Log("Created: " + newCreature.name);
+            newCreature.tag = gameObject.tag;
+            // Debug.Log("Created: " + newCreature.name);
             timeRemaining=0;
             timerIsRunning = false;
             }

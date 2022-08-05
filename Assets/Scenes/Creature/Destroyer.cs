@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    float timeRemaining = 15;
+    float timeRemaining;
     bool timerIsRunning = false;
     private void Start()
     {
+        timeRemaining = Random.Range(9, 30);
+        timeRemaining = 15; 
         timerIsRunning = true;
     }
     void Update()
@@ -20,7 +22,7 @@ public class Destroyer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Destroyed:"+gameObject.name);
+                // Debug.Log("Destroyed:"+gameObject.name);
                 timeRemaining = 0;
                 timerIsRunning = false;
                 Destroy(gameObject);

@@ -36,11 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scenes/Driver.cs" />
+     <Compile Include="Assets/Scenes/Creature/Driver.cs" />
      <Compile Include="Assets/Scenes/wallColission.cs" />
-     <Compile Include="Assets/Scenes/CreatureCloner.cs" />
-     <Compile Include="Assets/Scenes/Cloning.cs" />
-     <Compile Include="Assets/Scenes/Destroyer.cs" />
+     <Compile Include="Assets/Scenes/Creature/CreatureCloner.cs" />
+     <Compile Include="Assets/Scenes/Creature/Cloning.cs" />
+     <Compile Include="Assets/Scenes/Creature/Destroyer.cs" />
+     <Compile Include="Assets/Scenes/Creature/CreatureCollision.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Volumes/SSD/Applications/2021.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
