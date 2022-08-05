@@ -14,7 +14,7 @@ public class Driver : MonoBehaviour
         Vector3 direction = new Vector3(Random.Range(-10,10),Random.Range(-10,10),0);
         // gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         Rigidbody2D rigid =  gameObject.GetComponent<Rigidbody2D>();
-        rigid.AddForce(direction * Random.Range(-10,10));
+        rigid.AddForce(direction * Random.Range(-100,100));
 
     }
 
