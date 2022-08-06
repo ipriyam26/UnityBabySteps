@@ -8,7 +8,7 @@ public class Destroyer : MonoBehaviour
     bool timerIsRunning = false;
     private void Start()
     {
-        timeRemaining = Random.Range(9, 30);
+        // timeRemaining = Random.Range(9, 30);
         timeRemaining = 15; 
         timerIsRunning = true;
     }
