@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloning : MonoBehaviour
+public class Clone : MonoBehaviour
 {
     // Start is called before the first frame update
     float timeRemaining;
@@ -32,7 +32,7 @@ public class Cloning : MonoBehaviour
                 // Creates a new creature
             GameObject newCreature = Instantiate(creature);
             newCreature.GetComponent<SpriteRenderer>().color = color;
-            Destroy(newCreature.GetComponent<Cloning>());
+            Destroy(newCreature.GetComponent<Clone>());
             newCreature.transform.position = gameObject.transform.position;
             newCreature.name  =  gameObject.name;
             // Debug.Log("Created: " + newCreature.name);

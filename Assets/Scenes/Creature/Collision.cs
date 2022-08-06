@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreatureCollision : MonoBehaviour
+public class Collision : MonoBehaviour
 {
     GameObject creature;
     bool timerIsRunning = false;

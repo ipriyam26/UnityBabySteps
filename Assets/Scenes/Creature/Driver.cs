@@ -5,16 +5,18 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
 
-
+Stats stats;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 direction = new Vector3(Random.Range(-10,10),Random.Range(-10,10),0);
-        // gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        Rigidbody2D rigid =  gameObject.GetComponent<Rigidbody2D>();
-        rigid.AddForce(direction * Random.Range(-100,100));
+        stats = GetComponent<Stats>();
+
+        gameObject.GetComponent<SpriteRenderer>().color = stats.color;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 1)*stats.speed;
+        gameObject.transform.localScale = new Vector2(0.1f   ,0.1f )*stats.size;
+        
 
     }
 
