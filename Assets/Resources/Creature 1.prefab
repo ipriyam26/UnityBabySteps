@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8342134862986635679}
   - component: {fileID: -7866023649653064646}
   - component: {fileID: 6539707236749403357}
+  - component: {fileID: 7933116719709062738}
   m_Layer: 0
   m_Name: Creature 1
   m_TagString: Untagged
@@ -175,6 +176,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81db08eec314af2bfd7b6c5b0a9b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  Generation: 0
+  Group: 0
   speed: 0
   health: 0
   size: 0
+--- !u!114 &7933116719709062738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814997717709485670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e74ded7d91447fc9b3e0f66f5fa3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

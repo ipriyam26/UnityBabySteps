@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: e8cd04a02c5124050b09f44384c2fcb6
+guid: 2db058dab63ba43a29b821f6fc75c07a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - creaturePool: {fileID: 1211507679149211134, guid: 8e67283e5bd3340db9b0028fdf66a16a, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
