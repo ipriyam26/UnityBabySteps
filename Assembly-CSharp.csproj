@@ -41,9 +41,9 @@
      <Compile Include="Assets/Scenes/Creature/Driver.cs" />
      <Compile Include="Assets/Scenes/wallColission.cs" />
      <Compile Include="Assets/Scenes/Creature/Creator.cs" />
+     <Compile Include="Assets/Scenes/Creature/Mutation.cs" />
      <Compile Include="Assets/Scenes/Creature/Clone.cs" />
      <Compile Include="Assets/Scenes/Creature/Destroyer.cs" />
-     <Compile Include="Assets/Scenes/Creature/Mutation.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Volumes/SSD/Applications/2021.3.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

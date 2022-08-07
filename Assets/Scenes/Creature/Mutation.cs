@@ -42,14 +42,153 @@ public class StatHolder{
         }
         return stat;
     }
-    private  StatHolder colorMutation(StatHolder stat)
+
+    private StatHolder manageColor( StatHolder stat )
     {
-     int odd = (int)Random.Range(0,10);
-     if(odd%3==0){
-        stat.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f));
-     }
-      return stat;
+
+        stat = speedColor(stat);
+        stat = sizeColor(stat);
+
+        return stat;
     }
+
+  private StatHolder sizeColor( StatHolder stat ){
+    float size = stat.size;
+    if(size>=8){
+      stat.color = new Color(stat.color.r,stat.color.g,1f);
+    }
+    else if(size>=7.5f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.95f);
+    }
+    else if(size>=7f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.9f);
+
+    }
+    else if(size>=6.8f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.85f);
+    }
+    else if(size>=6.6f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.8f);
+    }
+    else if(size>=6.4f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.75f);
+    }
+    else if(size>6.2f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.7f);
+    }
+    else if(size>=6f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.65f);
+    }
+    else if (size>=5.8f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.6f);
+    }
+    else if (size>=5.6f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.55f);
+    }
+    else if (size>=5.4f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.5f);
+    }
+    else if (size>=5.2f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.45f);
+    }
+    else if (size>=5f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.4f);
+    }
+    else if (size>=4.8f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.35f);
+    }
+    else if (size>=4.6f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.3f);
+    }
+    else if (size>=4.5f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.25f);
+    }
+    else if (size>=4.4f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.2f);
+    }
+    else if(size>=4.3f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.15f);
+    }
+    else if (size>=4.2f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.1f);
+    }
+    else if (size>=4.1f){
+      stat.color = new Color(stat.color.r,stat.color.g,0.05f);
+    }
+    
+    return stat;
+  }
+    private  StatHolder speedColor(StatHolder stat)
+    {
+      float speed = stat.speed;
+        if (speed >= 20)
+        {
+            stat.color = new Color(1f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 19)
+        {
+            stat.color = new Color(0.95f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 18)
+        {
+            stat.color = new Color(0.9f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 17)
+        {
+            stat.color = new Color(0.85f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 16)
+        {
+            stat.color = new Color(0.8f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 15.5)
+        {
+            stat.color = new Color(0.75f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 15)
+        {
+            stat.color = new Color(0.7f, stat.color.g, stat.color.b);
+        }
+
+        else if (speed >= 14.9)
+        {
+            stat.color = new Color(0.6f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.8)
+        {
+            stat.color = new Color(0.55f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.7)
+        {
+            stat.color = new Color(0.5f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.6)
+        {
+            stat.color = new Color(0.45f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.5)
+        {
+            stat.color = new Color(0.4f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.4)
+        {
+            stat.color = new Color(0.35f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.3)
+        {
+            stat.color = new Color(0.3f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.2)
+        {
+            stat.color = new Color(0.25f, stat.color.g, stat.color.b);
+        }
+        else if (speed >= 14.1)
+        {
+            stat.color = new Color(0.2f, stat.color.g, stat.color.b);
+        }
+        return stat;
+    }
+
     private  StatHolder speedMutation(StatHolder stat)
     {
      int odd = (int)Random.Range(0,10);
@@ -81,11 +220,20 @@ public class StatHolder{
     {
         StatHolder stat = new StatHolder(newStat);
         stat = timeMutation(stat);
-        stat = colorMutation(stat);
+        // stat = colorMutation(stat);
+        
         stat = speedMutation(stat);
         stat = sizeMutation(stat);
         stat = healthMutation(stat);
-        newStat.updateAll(stat.color,stat.speed,stat.health,stat.size,stat.timeToDeath,stat.timeToReproduce);
+        stat = manageColor(stat);
+        newStat.updateAll(
+          size: stat.size,
+          speed: stat.speed,
+          health: stat.health,
+          color: stat.color,
+          timeToReproduce: stat.timeToReproduce,
+          timeToDeath: stat.timeToDeath
+        );
 
     }
 }
