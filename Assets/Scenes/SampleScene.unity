@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Simulation
       objectReference: {fileID: 0}
+    - target: {fileID: 8261427716151960629, guid: 53878273d44084d4abbf7d01cb1aa9cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53878273d44084d4abbf7d01cb1aa9cf, type: 3}
 --- !u!1 &519420028
@@ -490,7 +494,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.0047169924, g: 1, b: 0.8934735, a: 0}
+  m_BackGroundColor: {r: 0.10528659, g: 0.13207549, b: 0.12922785, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -681,6 +685,10 @@ PrefabInstance:
     - target: {fileID: 1211507679149211134, guid: 8e67283e5bd3340db9b0028fdf66a16a, type: 3}
       propertyPath: m_Name
       value: CreaturePool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211507679149211134, guid: 8e67283e5bd3340db9b0028fdf66a16a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1211507679149211135, guid: 8e67283e5bd3340db9b0028fdf66a16a, type: 3}
       propertyPath: m_RootOrder

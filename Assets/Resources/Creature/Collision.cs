@@ -54,36 +54,24 @@ Rigidbody2D oRigidBody =other.gameObject.GetComponent<Rigidbody2D>();
 
         else
         {
+            Stats oStats = other.gameObject.GetComponent<Stats>();
             if(timerIsRunning || other.gameObject.GetComponent<Collision>().timerIsRunning){
                 return;
             }
-            Stats oStats = other.gameObject.GetComponent<Stats>();
             if(oStats.Group == gameObject.GetComponent<Stats>().Group && Mathf.Abs(oStats.Generation - stat.Generation) <= 3)
            {
             return;
            }
+
 
            if (!oStats.destroyed && !stat.destroyed)
             {
 
                 float myKE = 0.5f *rigidBody.velocity.magnitude *rigidBody.mass *rigidBody.velocity.magnitude;
                 float otherKE = 0.5f * oRigidBody.velocity.magnitude * oRigidBody.mass * oRigidBody.velocity.magnitude;
+                gameObject.GetComponent<Damage>().hit(otherKE);
+                other.gameObject.GetComponent<Damage>().hit(myKE);
 
-
-                if (myKE > otherKE)
-                {
-                    Destroy(other.gameObject);
-                    oStats.destroy();
-                    rigidBody.velocity = oRigidBody.velocity/2 + rigidBody.velocity;
-                    Debug.Log("Destroyed:" + other.gameObject.name);
-                }
-                else if (myKE < otherKE)
-                {
-                    Destroy(gameObject);
-                    oRigidBody.velocity = rigidBody.velocity/2 + oRigidBody.velocity;
-                    gameObject.GetComponent<Stats>().destroy();
-                    Debug.Log("Destroyed:" + gameObject.name);
-                }
             }
         }
     }

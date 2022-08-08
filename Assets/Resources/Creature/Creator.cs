@@ -10,7 +10,7 @@ GameObject creature;
     void Start()
     {
     creature =   Resources.Load<GameObject>("Creature 1");
-     CreateCreature(100);  
+     CreateCreature(50);  
  
     }
 
@@ -23,7 +23,6 @@ GameObject creature;
         float speed = 14;
         float size = 4;
         float health = 100;
-        float timeToDeath = 15;
         float timeToReproduce = 10;
         Debug.Log("Color: " + color + " Speed: " + speed + " Size: " + size + " Health: " + health);
 
@@ -32,13 +31,13 @@ GameObject creature;
             GameObject newCreature = Instantiate(creature);
             Stats stats = newCreature.GetComponent<Stats>();
             stats.updateAll(
-                color:color,
-                speed:speed,
-                size:size,
-                health:health,
-                timeToDeath:timeToDeath,
-                timeToReproduce:timeToReproduce
+                color,
+                speed,
+                health,
+                size,
+                timeToReproduce
             );
+
             stats.updateGeneration(1);
             stats.updateGroup(i);
             newCreature.transform.parent = creaturePool.transform;

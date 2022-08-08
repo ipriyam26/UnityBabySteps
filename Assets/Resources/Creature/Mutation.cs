@@ -21,7 +21,6 @@ public class Mutation : MonoBehaviour
             this.speed = stat.speed;
             this.health = stat.health;
             this.size = stat.size;
-            this.timeToDeath = stat.timeToDeath;
             this.timeToReproduce = stat.timeToReproduce;
         }
 
@@ -59,6 +58,19 @@ public class Mutation : MonoBehaviour
         return stat;
 
     }
+    private StatHolder healthMutation(StatHolder stat)
+    {
+        int odd = (int)Random.Range(0, 10);
+        float oldHealth = stat.health;
+        if (odd % 3 == 0)
+        {
+            stat.health = stat.health + Random.Range(-1f, 1f);
+            float diff = oldHealth - stat.health;
+            float g = stat.color.g + diff;
+            stat.color = new Color(stat.color.r, g, stat.color.b);
+        }
+        return stat;
+    }
     private StatHolder sizeMutation(StatHolder stat)
     {
         int odd = (int)Random.Range(0, 10);
@@ -74,20 +86,10 @@ public class Mutation : MonoBehaviour
         return stat;
 
     }
-    private StatHolder healthMutation(StatHolder stat)
-    {
-        int odd = (int)Random.Range(0, 10);
-        if (odd % 3 == 0)
-        {
-            stat.health = stat.health + Random.Range(-0.1f, 0.1f);
-        }
-        return stat;
-    }
 
     private void Mutations(Stats newStat, GameObject newCreature)
     {
         StatHolder stat = new StatHolder(newStat);
-        // stat = colorMutation(stat);
         stat = speedMutation(stat);
         stat = sizeMutation(stat);
         stat = healthMutation(stat);
@@ -96,8 +98,7 @@ public class Mutation : MonoBehaviour
           speed: stat.speed,
           health: stat.health,
           color: stat.color,
-          timeToReproduce: stat.timeToReproduce,
-          timeToDeath: stat.timeToDeath
+          timeToReproduce: stat.timeToReproduce
         );
 
     }

@@ -17,7 +17,6 @@ public class Stats : MonoBehaviour
      public float health;
 
     public float timeToReproduce;
-    public float timeToDeath;
     public bool destroyed ;
 
     // It will cost 0.01f for each unit speed and 0.05f for each unit size.
@@ -31,13 +30,12 @@ public class Stats : MonoBehaviour
             destroyed = false;
      }  
 
-    public void updateAll(Color color, float speed, float health, float size, float timeToReproduce, float timeToDeath){
+    public void updateAll(Color color, float speed, float health, float size, float timeToReproduce){
         updateColor(color);
         updateSpeed(speed);
         updateHealth(health);
         updateSize(size);
         updateTimeToReproduce(timeToReproduce);
-        updateTimeToDeath(timeToDeath);
     }
 
 public void destroy(){
@@ -87,12 +85,7 @@ public void destroy(){
             this.timeToReproduce = timeToReproduce;
             Mutations.Add("TimeToReproduce = " + timeToReproduce);
         }
-        public void updateTimeToDeath(float timeToDeath)
-        {
-            this.timeToDeath = timeToDeath;
-            Mutations.Add("TimeToDeath = " + timeToDeath);
-        }
-
+    
      
    
 }

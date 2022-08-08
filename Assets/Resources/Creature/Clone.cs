@@ -23,7 +23,6 @@ public class Clone : MonoBehaviour
         
         timerIsRunning = true;
         stat = gameObject.GetComponent<Stats>();
-        Debug.Log("Time to reproduce: "+stat.timeToReproduce);
         timeRemaining=stat.timeToReproduce;
 
 
@@ -45,7 +44,6 @@ public class Clone : MonoBehaviour
                 GameObject newCreature = Instantiate(gameObject);
                 Stats nStat = newCreature.GetComponent<Stats>();
                 newCreature.name = "Creature " + nStat.Group + "X" + (nStat.Generation +1);
-                Debug.Log("Created: " + newCreature.name);
                 nStat.updateGeneration(stat.Generation + 1);
                 nStat.updateGroup(stat.Group);
                 newCreature.transform.parent = gameObject.transform.parent;
